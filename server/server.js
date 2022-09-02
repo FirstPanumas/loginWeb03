@@ -1,6 +1,7 @@
 const express = require('express');
 const cors = require('cors');
 const userRoute = require('./route/userRoute');
+const authRoute = require('./route/auth');
 const app = express()
 
 app.use(express.json());
@@ -12,4 +13,5 @@ app.get('/', (req, res) => {
 })
 app.use('/',userRoute)
 app.use('/api',userRoute)
+app.use('/api',authRoute)
 app.listen(5000, () => { console.log("http://localhost:5000"); })
